@@ -1,0 +1,49 @@
+# Rider project files
+.idea/
+*.sln.iml
+*.Rider/
+*.DotSettings.user
+
+# Build output
+bin/
+obj/
+
+# User-specific settings
+*.suo
+*.user
+*.csproj.user
+*.rsuser
+
+# NuGet and dependencies
+packages/
+project.lock.json
+project.assets.json
+
+# Temporary files
+*.log
+*.tlog
+*.cache
+*.vspscc
+*.vssscc
+
+# Rider-specific caches
+.idea_modules/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/libraries/
+.idea/misc.xml
+.idea/modules.xml
+
+# VS Code settings (if using VS Code too)
+.vscode/
+
+# Debugging files
+*.pdb
+
+# Deployment files
+.publish/
+*.deploy
+
+# Resharper and Rider caches
+_ReSharper.Caches/
