@@ -7,8 +7,19 @@
         mc:Ignorable="d"
         Title="Chalkless" Height="450" Width="800" WindowState="Maximized"
         KeyDown="MainWindow_OnKeyDown">
-    <Grid>
-        <InkCanvas Name="InkCanvas">
+    <Grid Name="Grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Background="White" Name="SideMenu" Width="250" VerticalAlignment="Stretch">
+            <Button FontSize="20" Click="BrushButton_OnClick">Brush</Button>
+            <Button FontSize="20" Click="DeleteButton_OnClick">Delete</Button>
+            <Button FontSize="20" Click="SelectButton_OnClick">Select</Button>
+        </StackPanel>
+        
+        <InkCanvas Name="InkCanvas" Grid.Column="1">
             <InkCanvas.DefaultDrawingAttributes>
                 <DrawingAttributes Color="Orange" Width="3"></DrawingAttributes>
             </InkCanvas.DefaultDrawingAttributes>

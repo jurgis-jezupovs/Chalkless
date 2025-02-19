@@ -35,5 +35,31 @@ public partial class MainWindow : Window
         {
             InkCanvas.EditingMode = InkCanvasEditingMode.Select;
         }
+        else if (e.Key == Key.M)
+        {
+            if (Grid.ColumnDefinitions[0].Width.Value > 0)
+            {
+                Grid.ColumnDefinitions[0].Width = new GridLength(0);
+            }
+            else
+            {
+                Grid.ColumnDefinitions[0].Width = new GridLength(250);
+            }
+        }
+    }
+
+    private void BrushButton_OnClick(object sender, RoutedEventArgs e)
+    {
+        InkCanvas.EditingMode = InkCanvasEditingMode.Ink;
+    }
+
+    private void DeleteButton_OnClick(object sender, RoutedEventArgs e)
+    {
+        InkCanvas.EditingMode = InkCanvasEditingMode.EraseByStroke;
+    }
+
+    private void SelectButton_OnClick(object sender, RoutedEventArgs e)
+    {
+        InkCanvas.EditingMode = InkCanvasEditingMode.Select;
     }
 }
