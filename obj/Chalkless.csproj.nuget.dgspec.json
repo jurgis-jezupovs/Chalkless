@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Chalkless\\Chalkless\\Chalkless.csproj": {}
+    "D:\\Chalkless\\Chalkless.csproj": {}
   },
   "projects": {
-    "D:\\Chalkless\\Chalkless\\Chalkless.csproj": {
+    "D:\\Chalkless\\Chalkless.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Chalkless\\Chalkless\\Chalkless.csproj",
+        "projectUniqueName": "D:\\Chalkless\\Chalkless.csproj",
         "projectName": "Chalkless",
-        "projectPath": "D:\\Chalkless\\Chalkless\\Chalkless.csproj",
+        "projectPath": "D:\\Chalkless\\Chalkless.csproj",
         "packagesPath": "C:\\Users\\jurgi\\.nuget\\packages\\",
-        "outputPath": "D:\\Chalkless\\Chalkless\\obj\\",
+        "outputPath": "D:\\Chalkless\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

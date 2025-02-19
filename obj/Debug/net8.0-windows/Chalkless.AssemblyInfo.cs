@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Chalkless")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+59095fa68d67e8b299cb26b76312e8f78507e23d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1de0eabf077c8abc1e903534a77b05b34497e603")]
 [assembly: System.Reflection.AssemblyProductAttribute("Chalkless")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Chalkless")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
