@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chalkless"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" WindowState="Maximized"
+        KeyDown="MainWindow_OnKeyDown">
     <Grid>
+        <InkCanvas Name="InkCanvas">
+            <InkCanvas.DefaultDrawingAttributes>
+                <DrawingAttributes Color="Orange" Width="3"></DrawingAttributes>
+            </InkCanvas.DefaultDrawingAttributes>
+            <InkCanvas.Background>
+                <DrawingBrush TileMode="Tile" Viewport="-10,-10,45,45" 
+                              ViewportUnits="Absolute">
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing>
+                            <GeometryDrawing.Brush>
+                                <SolidColorBrush Color="#262626"/>
+                            </GeometryDrawing.Brush>
 
+                            <GeometryDrawing.Geometry>
+                                <RectangleGeometry Rect="0,0,50,50"/>
+                            </GeometryDrawing.Geometry>
+
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="#454545" Thickness="1"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </InkCanvas.Background> 
+        </InkCanvas>
     </Grid>
 </Window>

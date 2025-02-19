@@ -20,4 +20,20 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
     }
+
+    private void MainWindow_OnKeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.B)
+        {
+            InkCanvas.EditingMode = InkCanvasEditingMode.Ink;
+        }
+        else if (e.Key == Key.D)
+        {
+            InkCanvas.EditingMode = InkCanvasEditingMode.EraseByStroke;
+        }
+        else if (e.Key == Key.S)
+        {
+            InkCanvas.EditingMode = InkCanvasEditingMode.Select;
+        }
+    }
 }
