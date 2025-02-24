@@ -4,9 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chalkless"
+        xmlns:viewModels="clr-namespace:Chalkless.ViewModels"
         mc:Ignorable="d"
         Title="Chalkless" Height="450" Width="800" WindowState="Maximized"
         KeyDown="MainWindow_OnKeyDown">
+    <Window.DataContext>
+        <viewModels:MainViewModel/>
+    </Window.DataContext>
+        <Window.InputBindings>
+            <KeyBinding Key="Right" Command="{Binding NextCanvasCommand}"></KeyBinding>
+            <KeyBinding Key="Left" Command="{Binding PrevCanvasCommand}"></KeyBinding>
+            <KeyBinding Key="B" Command="{Binding EditingModeInkCommand}"></KeyBinding>
+            <KeyBinding Key="D" Command="{Binding EditingModeDeleteCommand}"></KeyBinding>
+            <KeyBinding Key="S" Command="{Binding EditingModeSelectCommand}"></KeyBinding>
+            <KeyBinding Key="D1" Command="{Binding OrangeColorCommand}"></KeyBinding>
+            <KeyBinding Key="D2" Command="{Binding GreenColorCommand}"></KeyBinding>
+            <KeyBinding Key="D3" Command="{Binding Path=BlueColorCommand}"></KeyBinding>
+            <KeyBinding Key="D4" Command="{Binding Path=RedColorCommand}"></KeyBinding>
+        </Window.InputBindings>
     <Grid Name="Grid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
@@ -14,35 +29,25 @@
         </Grid.ColumnDefinitions>
         
         <StackPanel Background="White" Name="SideMenu" Width="250" VerticalAlignment="Stretch">
-            <Button FontSize="20" Click="BrushButton_OnClick">Brush</Button>
-            <Button FontSize="20" Click="DeleteButton_OnClick">Delete</Button>
-            <Button FontSize="20" Click="SelectButton_OnClick">Select</Button>
+            <TextBlock FontSize="20">Brush color: </TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <Button Height="30" Width="62.5" Background="Orange" Command="{Binding OrangeColorCommand}"></Button>
+                <Button Height="30" Width="62.5" Background="LimeGreen" Command="{Binding GreenColorCommand}"></Button>
+                <Button Height="30" Width="62.5" Background="DodgerBlue" Command="{Binding BlueColorCommand}"></Button>
+                <Button Height="30" Width="62.5" Background="Red" Command="{Binding RedColorCommand}"></Button>
+            </StackPanel>
+            
+            <Button FontSize="20" Command="{Binding EditingModeInkCommand}">Brush</Button>
+            <Button FontSize="20" Command="{Binding EditingModeDeleteCommand}">Delete</Button>
+            <Button FontSize="20" Command="{Binding EditingModeSelectCommand}">Select</Button>
+            <TextBlock FontSize="20">
+                Workspace 
+                <TextBlock FontSize="20" Text="{Binding DisplayedIndex}"></TextBlock>
+                of 
+                <TextBlock FontSize="20" Text="{Binding CanvasCount}"></TextBlock>
+            </TextBlock>
         </StackPanel>
         
-        <InkCanvas Name="InkCanvas" Grid.Column="1">
-            <InkCanvas.DefaultDrawingAttributes>
-                <DrawingAttributes Color="Orange" Width="3"></DrawingAttributes>
-            </InkCanvas.DefaultDrawingAttributes>
-            <InkCanvas.Background>
-                <DrawingBrush TileMode="Tile" Viewport="-10,-10,45,45" 
-                              ViewportUnits="Absolute">
-                    <DrawingBrush.Drawing>
-                        <GeometryDrawing>
-                            <GeometryDrawing.Brush>
-                                <SolidColorBrush Color="#262626"/>
-                            </GeometryDrawing.Brush>
-
-                            <GeometryDrawing.Geometry>
-                                <RectangleGeometry Rect="0,0,50,50"/>
-                            </GeometryDrawing.Geometry>
-
-                            <GeometryDrawing.Pen>
-                                <Pen Brush="#454545" Thickness="1"/>
-                            </GeometryDrawing.Pen>
-                        </GeometryDrawing>
-                    </DrawingBrush.Drawing>
-                </DrawingBrush>
-            </InkCanvas.Background> 
-        </InkCanvas>
+        <ContentControl Grid.Column="1" Content="{Binding SelectedCanvas}"/>
     </Grid>
 </Window>
