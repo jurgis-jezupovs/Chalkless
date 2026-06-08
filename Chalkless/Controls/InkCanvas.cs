@@ -169,10 +169,6 @@ public class InkCanvas : Control
         
         try
         {
-            // Debug: Print available formats
-            var formats = await clipboard.GetDataFormatsAsync();
-            System.Diagnostics.Debug.WriteLine($"Available clipboard formats: {string.Join(", ", formats)}");
-            
             Bitmap? bitmap = null;
             
             // Try the built-in bitmap extension method first
