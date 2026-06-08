@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:Chalkless.Controls"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Chalkless.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Chalkless"
+        WindowState="Maximized">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TopMenu" Grid.Row="0" Orientation="Horizontal" Margin="10">
+            <Button Content="Save (Ctrl+S)" Click="OnSaveClick" Margin="0,0,5,0"/>
+            <Button Content="Load (Ctrl+O)" Click="OnLoadClick" Margin="0,0,10,0"/>
+            <Button Content="Clear" Click="OnClearClick" Margin="0,0,10,0"/>
+            <Button Content="Undo (Ctrl+Z)" Click="OnUndoClick" Margin="0,0,5,0"/>
+            <Button Content="Redo (Ctrl+Y)" Click="OnRedoClick" Margin="0,0,10,0"/>
+            
+            <ToggleButton x:Name="PanToggle" Content="Pan (H)" Margin="0,0,10,0" 
+                         IsChecked="{Binding #InkCanvas.IsPanMode, Mode=TwoWay}"/>
+            
+            <ToggleButton x:Name="EraserToggle" Content="Eraser (D)" Margin="0,0,10,0" 
+                         IsChecked="{Binding #InkCanvas.IsEraserMode, Mode=TwoWay}"/>
+            
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Ink Thickness:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <Slider x:Name="ThicknessSlider" Minimum="1" Maximum="10" Value="4" Width="150" VerticalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+
+        <controls:InkCanvas x:Name="InkCanvas" 
+                           Grid.Row="1"
+                           Background="Black"
+                           InkThickness="{Binding #ThicknessSlider.Value}"/>
+    </Grid>
+
+</Window>
