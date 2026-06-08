@@ -13,7 +13,7 @@ Feel free to open an issue if you find any bugs or have suggestions for new feat
 ### Clone repository
 ```
 git clone https://github.com/jurgis-jezupovs/chalkless.git
-cd chalkless
+cd chalkless/Chalkless
 ```
 ### Run the project
 ```
